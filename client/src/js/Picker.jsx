@@ -3,7 +3,6 @@ import { Container, Button, Modal, Spinner, Form } from "react-bootstrap";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
-import loader from "sass-loader";
 
 const cookies = new Cookies();
 

@@ -11,7 +11,6 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
-import loader from "sass-loader";
 
 import Picker from "./Picker.jsx"
 
