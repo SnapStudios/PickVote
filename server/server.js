@@ -23,41 +23,39 @@ var cookieParser = require('cookie-parser')
 
 // });
 
-function mongoSetUpDone() {
-  if (process.env.isHeroku == "true");
+if (process.env.isHeroku == "true");
 
-  app.use(fileUpload({
-    limits: { fileSize: 50 * 1024 * 1024 },
-    useTempFiles: true,
-  }));
+app.use(fileUpload({
+  limits: { fileSize: 50 * 1024 * 1024 },
+  useTempFiles: true,
+}));
 
-  app.use(express.json({ limit: '50mb' }));
-  app.use(cookieParser());
-  app.use(express.urlencoded({ limit: '50mb' }));
+app.use(express.json({ limit: '50mb' }));
+app.use(cookieParser());
+app.use(express.urlencoded({ limit: '50mb' }));
 
-  // Add headers
-  app.use(function (req, res, next) {
+// Add headers
+app.use(function (req, res, next) {
 
-    if (req.headers.origin == undefined) {
-      res.setHeader('Access-Control-Allow-Origin', "http://127.0.0.1:4564");
-    } else {
-      res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-    }
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization, SessionId");
-    res.setHeader('Access-Control-Allow-Credentials', true);
+  if (req.headers.origin == undefined) {
+    res.setHeader('Access-Control-Allow-Origin', "http://127.0.0.1:4564");
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, authorization, SessionId");
+  res.setHeader('Access-Control-Allow-Credentials', true);
 
-    next();
-  });
+  next();
+});
 
-  app.listen(port, function () {
-    console.log("PickVote Server Started on port " + port);
-  });
+app.listen(port, function () {
+  console.log("PickVote Server Started on port " + port);
+});
 
-  app.get('/get/:id', (req, res) => {
-    res.send(req.params.id);
-  })
+app.get('/get/:id', (req, res) => {
+  res.send(req.params.id);
+})
 
 
-  app.use('/', express.static("./"))
-}
+app.use('/', express.static("./client/"))

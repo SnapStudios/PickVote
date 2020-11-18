@@ -30,7 +30,7 @@ class PickVote extends Component {
         <HashRouter>
 
           <Switch>
-            <Route path="/details/:id" render={({ match }) => (
+            <Route path="/:id" render={({ match }) => (
               <div>
                 Welcome to {match.params.id}
               </div>
