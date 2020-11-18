@@ -1,0 +1,215 @@
+.account-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+@media(max-width:768px){
+  .account-wrapper{
+    margin-top:10vh;
+  }
+}
+.login-button{
+  margin: 20px;
+}
+
+
+.list-viewer{
+  /* width: 100vw; */
+}
+
+.side-menu-list{
+  /* width:30%; */
+  padding-right: 0px !important;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+
+}
+
+body{
+  scrollbar-color:#375a7f  #303030 ; /* first vertical then the peice */
+  scrollbar-color:#00bc8c  #303030 ; /* first vertical then the peice */
+  scrollbar-width: auto;
+
+
+
+}
+/* This is for chrome */
+::-webkit-scrollbar{ 
+  background-color: #303030;
+  width: 15px;
+}
+
+::-webkit-scrollbar-track-piece  {
+  height: 1px;
+  background-color:  #303030 /* alos blue */;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #00bc8c; /* the vertical*/
+}
+
+
+.lesson-viewer{
+
+  width: 100vw;
+  height: 50vh;
+
+}
+.lesson-editor{
+
+  width: 100vw;
+  height: 50vh;
+
+}
+.ProseMirror{
+  height: 100vh;;
+}
+
+
+.kvOJSo{
+  /* background-color: #fff0 !important; */
+}
+tr{
+  border: solid white 0px;
+}
+
+/* this is to override a syle that came with the react plugin, which was inline :(  */
+.se-wrapper-inner.se-wrapper-wysiwyg.sun-editor-editable {
+  height: 100% !important;
+}
+.sun-editor-editable {
+  color: #fff !important;
+  background-color: #222 !important;
+}
+
+li.nestable-item {
+  padding: 5px 8px;
+  list-style: none;
+  background-color: #222222;
+  margin: 0px 0px;
+  border-left: 3px solid #181818;
+}
+
+
+
+div.spinner{
+  width: 50em;
+  height: 50em;
+}
+div.spinner-sm{
+  width: 10em;
+  height: 10em;
+}
+
+
+.lesson-listing-wrapper{
+  margin: 2px 0px;;
+  border: 1px solid black;
+  padding:10px 5px;
+}
+
+.lesson-listing-link-wrapper{
+  width: 80%;;
+  display: inline-block;
+}
+.lesson-browser-lesson-text{
+  padding: 9px;
+}
+.list-collapse-icon{
+  display: inline-block;
+}
+.list-collapse-icon > span {
+  padding: 9px;
+  display: inline;
+  /* background: #353535; */
+}
+
+.list-collapse-icon > span:hover{
+  background: #181818;
+}
+
+span.ql-formats {
+  background: white !important;
+}
+
+.ql-ytembed:after {
+  content: "🎥";
+}
+
+.ql-image-embed:after {
+  content: "📷";
+}
+
+.ql-editor {
+  font-size: 25px !important;
+}
+.ytp-pause-overlay{
+  display:none !important;
+}
+ol.nestable-list {
+  padding: 0px !important;
+  margin: 5px !important;
+}
+
+.lesson-browser-wrapper{
+  position:fixed;
+  width: 25%;
+  border-right: 3px solid #00bc8c;
+  height: 100vh;
+  overflow-y: scroll;
+}
+.lesson-loader-wrapper{
+  left: 25%;
+  width: 70%;
+}
+.lesson-page-wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+.lesson-listing-selected{
+  background-color: #100e0e;
+}
+.lesson-listing-name{
+  display: inline;
+}
+
+
+.footer-wrapper {
+  bottom: 0px;
+  position: absolute;
+  text-align: right;
+  right: 0px;
+  font-size: 10px;
+  background-color: #1a1717;
+  width: 100%;
+  padding:10px;
+}
+.footer-text {
+  display: block;
+  padding-right:3em;
+}
+.btn.btn-xs {
+  padding: .50rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+
+}
+
+.admin-login-button {
+  margin-right: 8em;
+}
+.is-admin.editable-text-normal:hover{
+  border: 1px solid gray;
+  border-radius: 1px;
+  cursor: pointer;
+  color: lightblue;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  img{
+    width:100%;
+  }
+}
