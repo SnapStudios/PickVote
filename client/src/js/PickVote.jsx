@@ -13,6 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 import loader from "sass-loader";
 
+import Picker from "./Picker.jsx"
+
+
 const cookies = new Cookies();
 
 class PickVote extends Component {
@@ -33,13 +36,16 @@ class PickVote extends Component {
             <Route path="/:id" render={({ match }) => (
               <div>
                 Welcome to {match.params.id}
+
+                <Picker url={this.props.url}/>
+
               </div>
             )} />
 
 
             <Route path="/">
               <div>
-                Welcome to main page
+                <Redirect to={"/welcome"}></Redirect>
               </div>
             </Route>
 

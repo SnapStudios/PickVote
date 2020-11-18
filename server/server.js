@@ -54,7 +54,10 @@ app.listen(port, function () {
 });
 
 app.get('/get/:id', (req, res) => {
-  res.send(req.params.id);
+  res.send(JSON.stringify({
+    text:"this is sent from the server " + req.params.id,
+  }));
+
 })
 
 
