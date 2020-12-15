@@ -20,12 +20,16 @@ class PollCreator extends Component {
     createOnServer = () => {
         fetch(this.props.url + "/post/create/poll",
         {
-            body: {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
                 poll:{
                     id: "testpoll",
                     options: [],
                 }
-            }
+            })
         }
         ).then(res => res.json()).then(res => {
             let text = res.text;
@@ -45,7 +49,7 @@ class PollCreator extends Component {
                     value={this.state.pollName}
                     onChange={(e) => this.setState({ pollName: e.target.value })}
                 ></input>
-                <Button onClick={this.createOnServer}> Update</Button>
+                <Button onClick={this.createOnServer}> Create</Button>
 
                 <div className="server-content">{this.state.serverContent}</div>
 

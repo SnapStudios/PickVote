@@ -12,7 +12,8 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 
-import Picker from "./Picker.jsx"
+import PollCreator from "./PollCreator.jsx";
+import PollViewer from "./PollViewer.jsx";
 
 
 const cookies = new Cookies();
@@ -36,7 +37,8 @@ class PickVote extends Component {
               <div>
                 Welcome to {match.params.id}
 
-                <Picker url={this.props.url}/>
+                <PollCreator url={this.props.url}/>
+                <PollViewer url={this.props.url}/>
 
               </div>
             )} />

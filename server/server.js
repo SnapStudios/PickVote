@@ -56,14 +56,18 @@ app.listen(port, function () {
 });
 
 app.get('/get/poll/:id', (req, res) => {
-  res.send(JSON.stringify({
-    poll:polls[req.params.id],
-  }));
+  res.send(JSON.stringify(
+    polls[req.params.id],
+  ));
 })
 
 app.post('/post/create/poll', (req, res) => {
   let newPollData = req.body.poll;
+
+  console.log("poll", newPollData)
+  console.log("Create poll with id: ", newPollData.id)
   polls[newPollData.id] = newPollData;
+  console.log(polls);
 });
 
 
