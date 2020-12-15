@@ -6,6 +6,7 @@ const fileUpload = require('express-fileupload');
 var cookieParser = require('cookie-parser')
 
 
+let polls = {};
 // // initlizing mongo db
 // MongoClient.connect(uri, function (err, dbtemp) {
 //   if (err) {
@@ -22,6 +23,7 @@ var cookieParser = require('cookie-parser')
 //   mongoSetUpDone();
 
 // });
+
 
 if (process.env.isHeroku == "true");
 
@@ -53,12 +55,16 @@ app.listen(port, function () {
   console.log("PickVote Server Started on port " + port);
 });
 
-app.get('/get/:id', (req, res) => {
+app.get('/get/poll/:id', (req, res) => {
   res.send(JSON.stringify({
-    text:"this is sent from the server " + req.params.id,
+    poll:polls[req.params.id],
   }));
-
 })
+
+app.post('/post/create/poll', (req, res) => {
+  let newPollData = req.body.poll;
+  polls[newPollData.id] = newPollData;
+});
 
 
 app.use('/', express.static("./client/"))
